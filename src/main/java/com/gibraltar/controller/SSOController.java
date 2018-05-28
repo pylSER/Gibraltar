@@ -64,6 +64,12 @@ public class SSOController{
     }
 
 
+    @RequestMapping(path="/testAuth",method= RequestMethod.GET)
+    public boolean test() {
+        return true;
+    }
+
+
     private Cookie generateLoginCookie(String token){
         Cookie loginCookie=new Cookie("token",token);
         loginCookie.setMaxAge(grpcManager.getExpiredMins()*60*1000);
